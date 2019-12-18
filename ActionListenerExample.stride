@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="ActionListenerExample" enable="true" strideversion="1">
+    <javadoc xml:space="preserve"/>
+    <imports>
+        <import target="java.awt.*" enable="true"/>
+        <import target="java.awt.event.*" enable="true"/>
+        <import target="javax.swing.*" enable="true"/>
+    </imports>
+    <implements/>
+    <fields>
+        <variable access="private" type="JTextField" type-java="JTextField" name="inputField" value="new JTextField(10)" value-java=" new JTextField(10)" enable="true"/>
+        <variable access="private" type="JButton" type-java="JButton" name="appendButton" value="new JButton(&quot;Brandon&quot;)" value-java=" new JButton(&quot;Brandon&quot;)" enable="true"/>
+        <variable access="private" type="JTextArea" type-java="JTextArea" name="logArea" value="new JTextArea(10,30)" value-java=" new JTextArea(10, 30)" enable="true"/>
+        <comment xml:space="preserve">Unsupported feature in Stride : anonymous class</comment>
+        <variable access="private" type="ActionListener" type-java="ActionListener" name="listener" value="new ActionListener()" value-java=" new ActionListener()" enable="true"/>
+    </fields>
+    <constructors>
+        <constructor access="public" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <call expression="inputField.addActionListener(listener)" expression-java="inputField.addActionListener(listener)" enable="true"/>
+                <call expression="appendButton.addActionListener(listener)" expression-java="appendButton.addActionListener(listener)" enable="true"/>
+                <call expression="logArea.setEditable(false)" expression-java="logArea.setEditable(false)" enable="true"/>
+            </body>
+        </constructor>
+    </constructors>
+    <methods>
+        <method access="public" type="void" type-java="void" name="launchGUI" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <variable type="JPanel" type-java="JPanel" name="p" value="new JPanel()" value-java=" new JPanel()" enable="true"/>
+                <call expression="p.add(new JLabel(&quot;Enter text:&quot;))" expression-java="p.add( new JLabel(&quot;Enter text:&quot;))" enable="true"/>
+                <call expression="p.add(inputField)" expression-java="p.add(inputField)" enable="true"/>
+                <call expression="p.add(appendButton)" expression-java="p.add(appendButton)" enable="true"/>
+                <variable type="JFrame" type-java="JFrame" name="f" value="new JFrame(&quot;ActionListenerExample&quot;)" value-java=" new JFrame(&quot;ActionListenerExample&quot;)" enable="true"/>
+                <call expression="f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)" expression-java="f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)" enable="true"/>
+                <call expression="f.getRootPane().setDefaultButton(appendButton)" expression-java="f.getRootPane().setDefaultButton(appendButton)" enable="true"/>
+                <variable type="Container" type-java="Container" name="cp" value="f.getContentPane()" value-java="f.getContentPane()" enable="true"/>
+                <call expression="cp.add(new JScrollPane(logArea),BorderLayout.CENTER)" expression-java="cp.add( new JScrollPane(logArea), BorderLayout.CENTER)" enable="true"/>
+                <call expression="cp.add(p,BorderLayout.SOUTH)" expression-java="cp.add(p, BorderLayout.SOUTH)" enable="true"/>
+                <call expression="f.pack()" expression-java="f.pack()" enable="true"/>
+                <call expression="f.setLocationRelativeTo(null)" expression-java="f.setLocationRelativeTo(null)" enable="true"/>
+                <call expression="f.setVisible(true)" expression-java="f.setVisible(true)" enable="true"/>
+            </body>
+        </method>
+        <method access="public" static="true" type="void" type-java="void" name="main" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <param type="String[]" type-java="String[]" name="args"/>
+            </params>
+            <throws/>
+            <body>
+                <comment xml:space="preserve">Unsupported feature in Stride : anonymous class</comment>
+                <call expression="EventQueue.invokeLater(new Runnable())" expression-java="EventQueue.invokeLater( new Runnable())" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>
